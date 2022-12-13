@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "THONG_TIN_HD_CSLT",
+    "TABLE_SOURCE_2": "",
+    "TABLE_SOURCE_3" : "",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_THONG_TIN_HD_CSLT",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["ten_cslt", "doanh_thu", "sl_khach_noi_dia", "sl_khach_quoc_te", "cong_suat_phong", "thang", "quy" , "nam"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_thong_tin_hd_cslt",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng thông tin hd cơ sở lưu trú",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }

@@ -1,0 +1,50 @@
+{
+    "source": [
+        {
+            "TABLE": "STG_LDLD_DANH_SACH_CONG_DOAN",
+            "SCHEMA": "DWH_STG",
+            "DB_TYPE": "oracle",
+            "CONNECTION": "dwh_oracle",
+            "COLUMNS": {
+                "MA_CONG_DOAN_CS": "MA_CONG_DOAN_CS",
+                "TEN_CONG_DOAN_CS": "TEN_CONG_DOAN_CS",
+                "DIA_CHI": "DIA_CHI"
+            }
+        },
+        {
+            "TABLE": "STG_LDLD_DANH_SACH_LIEN_DOAN",
+            "SCHEMA": "DWH_STG",
+            "DB_TYPE": "oracle",
+            "CONNECTION": "dwh_oracle",
+            "COLUMNS": {
+                "MA_LIEN_DOAN": "MA_LIEN_DOAN_CT"
+            },
+            "JOIN_COL": [
+                "TEN_LD_CAP_TREN",
+                "TEN_LIEN_DOAN"
+            ]
+        }
+    ],
+    "target": {
+        "TABLE": "DIM_LDLD_DANH_SACH_CONG_DOAN",
+        "SCHEMA": "DWH_DIM",
+        "DB_TYPE": "oracle",
+        "CONNECTION": "dwh_oracle",
+        "KEY_COL": "MA_CONG_DOAN_CS",
+        "SEQ_COL": "ID_CONG_DOAN_CS"
+    },
+    "DAG_CONFIG": {
+        "AIRFLOW_NAME": "etl_dim_danh_sach_cong_doan",
+        "DEFAULT_ARGS": {
+            "retries": 1
+        },
+        "DESCRIPTION": "etl dim danh sách công đoàn",
+        "SCHEDULE_INTERVAL": "None",
+        "CATCHUP": "False",
+        "TAGS": [
+            "etl",
+            "dim",
+            "cong_doan"
+        ]
+    }
+}

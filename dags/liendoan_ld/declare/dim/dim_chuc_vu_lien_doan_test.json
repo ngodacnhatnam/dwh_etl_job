@@ -1,0 +1,23 @@
+{   
+    "TABLE_SOURCE" : "STG_LDLD_CHUC_VU_LIEN_DOAN",
+    "SCHEMA_SOURCE" : "DWH_STG",
+    "DB_TYPE_SOURCE" : "oracle",
+    "CONNECTION_SOURCE" : "dwh_oracle",
+
+    "TABLE_TARGET" : "DIM_LDLD_CHUC_VU_LIEN_DOAN1",
+    "SCHEMA_TARGET" : "DWH_DIM",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+
+    "ALL_COL" : ["ID_CHUC_VU","MA_CHUC_VU", "TEN_CHUC_VU"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_dim_chuc_vu_lien_doan_ldld_test",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"etl dim về chức vụ liên đoàn",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "dim", "tong_ldld"]
+        }
+}

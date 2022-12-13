@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "LOAI_DNLH",
+    "TABLE_SOURCE_2": "",
+    "TABLE_SOURCE_3" : "",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_LOAI_DNLH",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_LOAI_DNLH", "TEN_LOAI_DNLH"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_loai_dnlh",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng loại doanh nghiệp lữ hành",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }

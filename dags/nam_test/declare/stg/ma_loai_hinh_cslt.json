@@ -1,0 +1,21 @@
+{
+    "TABLE_SOURCE" : "ma_loai_hinh_cslt",
+    "SCHEMA_SOURCE" : "",
+    "DB_TYPE_SOURCE" : "excel",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_MA_LOAI_HINH_CSLT_TEST_NAMNGO",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_LOAI_HINH_CSLT", "TEN_LOAI_HINH"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_ma_loai_hinh_cslt_test",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Lưu thông tin về mã loại hình cslt",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "tong_ldld"]
+        }
+    }

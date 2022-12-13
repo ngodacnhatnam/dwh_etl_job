@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "THONG_TIN_DNLH",
+    "TABLE_SOURCE_2": "THONG_TIN_HUYEN_TP",
+    "TABLE_SOURCE_3" : "TRANG_THAI_DNLH",
+    "TABLE_SOURCE_4": "LOAI_HINH_DNLH",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_DANH_MUC_DOANH_NGHIEP_LU_HANH",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_DOANH_NGHIEP", "TRANG_THAI_DNLH", "TEN_DOANH_NGHIEP_LH", "LOAI_DOANH_NGHIEP_LH", "LOAI_HINH_DNLH", "DIA_CHI", "SO_DIEN_THOAI", "TEN_HUYEN_TP"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_danh_muc_doanh_nghiep_lu_hanh",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng danh mục tour du lịch",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }

@@ -1,0 +1,23 @@
+{   
+    "TABLE_SOURCE" : "STG_LDLD_THONG_TIN_PHI_PHUC_LOI",
+    "SCHEMA_SOURCE" : "DWH_STG",
+    "DB_TYPE_SOURCE" : "oracle",
+    "CONNECTION_SOURCE" : "dwh_oracle",
+    "TABLE_TARGET" : "SMY_LDLD_THONG_TIN_PHI_PHUC_LOI",
+    "SCHEMA_TARGET" : "DWH_SUM",
+    "DB_TYPE_TARGET" : "oracle",
+    "ETL_DATE_COL" : "NGAY_ETL",
+    "ETL_DATE_VAR" : "",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["TEN_DOAN_VIEN", "MA_CHI_PHI_CD", "SO_TIEN_CHI","NGAY_CHI"],
+    "DATE_COL" : ["ngay_chi"],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_smy_thong_tin_phi_phuc_loi_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng tổng hợp thông tin về phí phúc lợi",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "sum", "tong_ldld"]
+        }        
+    }

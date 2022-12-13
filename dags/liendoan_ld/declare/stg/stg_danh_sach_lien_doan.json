@@ -1,0 +1,21 @@
+{   
+    "TABLE_SOURCE" : "STG_DANH_SACH_LIEN_DOAN",
+    "SCHEMA_SOURCE" : "LIEN_DOAN_LD",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_LDLD_DANH_SACH_LIEN_DOAN",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_LIEN_DOAN", "TEN_LIEN_DOAN", "DIA_CHI", "SO_DT", "TEN_LD_CAP_TREN"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_stg_danh_sach_lien_doan_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Lưu thông tin về liên đoàn",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "tong_ldld"]
+        }
+    }

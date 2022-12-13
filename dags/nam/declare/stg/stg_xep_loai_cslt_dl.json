@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "XEP_LOAI_CSLT",
+    "TABLE_SOURCE_2": "",
+    "TABLE_SOURCE_3" : "",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_XEP_LOAI_CSLT",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_XEP_LOAI_CSLT", "TEN_XEP_LOAI"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_xep_loai_cslt",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng xếp loại co sở lưu trú",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }

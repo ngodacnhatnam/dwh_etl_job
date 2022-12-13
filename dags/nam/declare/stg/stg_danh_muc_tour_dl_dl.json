@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "TOUR_DU_LICH",
+    "TABLE_SOURCE_2": "THONG_TIN_HUYEN_TP",
+    "TABLE_SOURCE_3" : "",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_DANH_MUC_TOUR_DL",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_TOUR_DL", "TEN_TOUR_DL", "TEN_HUYEN_TP"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_danh_muc_tour_dl",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng danh mục tour du lịch",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }
