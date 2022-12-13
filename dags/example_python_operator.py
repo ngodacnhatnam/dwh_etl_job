@@ -37,7 +37,7 @@ with DAG(
     schedule_interval=None,
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     catchup=False,
-    tags=['example','tuan'],
+    tags=['example','tuan','etl'],
 ) as dag:
     # [START howto_operator_python]
     @task(task_id="print_the_context")
