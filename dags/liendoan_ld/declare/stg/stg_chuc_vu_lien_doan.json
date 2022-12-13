@@ -1,0 +1,21 @@
+{   
+    "TABLE_SOURCE" : "STG_CHUC_VU_LIEN_DOAN",
+    "SCHEMA_SOURCE" : "LIEN_DOAN_LD",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_LDLD_CHUC_VU_LIEN_DOAN",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_CHUC_VU", "TEN_CHUC_VU"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_stg_chuc_vu_lien_doan_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Lưu thông tin về chức vụ liên đoàn",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "tong_ldld"]
+        }
+    }

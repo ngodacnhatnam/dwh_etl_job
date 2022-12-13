@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "DIA_DIEM_AN_UONG",
+    "TABLE_SOURCE_2": "THONG_TIN_HUYEN_TP",
+    "TABLE_SOURCE_3" : "",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_DANH_MUC_DDAU",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_DIEM_AU", "TEN_DIEM_AU", "DIA_CHI", "TEN_HUYEN_TP"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_danh_muc_ddau",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng danh mục địa điểm ăn uống",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }

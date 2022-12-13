@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "THONG_TIN_PH_TIEU_CUC",
+    "TABLE_SOURCE_2": "THONG_TIN_HUYEN_TP",
+    "TABLE_SOURCE_3" : "LOAI_PHAN_HOI",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_THONG_TIN_PH_TIEU_CUC",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["kenh_phan_hoi", "loai_phan_hoi", "ten_dd_dv_bi_phan_hoi", "ten_huyen_tp", "phan_hoi_chi_tiet", "so_luong_ph", "thang", "quy" , "nam"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_thong_tin_ph_tieu_cuc",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng thông tin phản hồi tiêu cực",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }

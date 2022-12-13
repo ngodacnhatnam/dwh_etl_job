@@ -1,0 +1,23 @@
+{   
+    "TABLE_SOURCE" : "STG_LDLD_THONG_TIN_DOAN_VIEN",
+    "SCHEMA_SOURCE" : "DWH_STG",
+    "DB_TYPE_SOURCE" : "oracle",
+    "CONNECTION_SOURCE" : "dwh_oracle",
+    "TABLE_TARGET" : "DIM_LDLD_THONG_TIN_DOAN_VIEN",
+    "SCHEMA_TARGET" : "DWH_DIM",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_DOAN_VIEN","MA_THE_DOAN_VIEN","TEN_DOAN_VIEN", "GIOI_TINH","NGAY_SINH", "QUE_QUAN", "SO_CMND","CHUC_VU",
+    "NGAY_VAO_CD","MA_CONG_DOAN_CS","VI_TRI_CONG_VIEC","NAM_VAO_LAM_VIEC"],
+    "DATE_COL" : ["ngay_sinh","ngay_vao_cd"],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_dim_thong_tin_doan_vien_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"etl dim về chức vụ liên đoàn",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "dim", "tong_ldld"]
+        }
+}
+

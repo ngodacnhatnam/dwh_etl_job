@@ -1,0 +1,21 @@
+{   
+    "TABLE_SOURCE" : "STG_PHAN_HOI_KHIEU_NAI",
+    "SCHEMA_SOURCE" : "LIEN_DOAN_LD",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_LDLD_PHAN_HOI_KHIEU_NAI",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_DOAN_VIEN", "TEN_DOAN_VIEN", "KHIEU_NAI_PH", "TINH_TRANG_XU_LY","NGAY_KHIEU_NAI_PH"],
+    "DATE_COL" : ["NGAY_KHIEU_NAI_PH"],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_stg_phan_hoi_khieu_nai_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Lưu thông tin về phản hồi, khiếu nại",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "tong_ldld"]
+        }
+    }

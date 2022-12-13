@@ -1,0 +1,23 @@
+{   
+    "TABLE_SOURCE" : "STG_LDLD_PHAN_HOI_KHIEU_NAI",
+    "SCHEMA_SOURCE" : "DWH_STG",
+    "DB_TYPE_SOURCE" : "oracle",
+    "CONNECTION_SOURCE" : "dwh_oracle",
+    "TABLE_TARGET" : "SMY_LDLD_PHAN_HOI_KHIEU_NAI",
+    "SCHEMA_TARGET" : "DWH_SUM",
+    "DB_TYPE_TARGET" : "oracle",
+    "ETL_DATE_COL" : "NGAY_ETL",
+    "ETL_DATE_VAR" : "",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["TEN_DOAN_VIEN", "KHIEU_NAI_PH", "TINH_TRANG_XU_LY","NGAY_KHIEU_NAI_PH"],
+    "DATE_COL" : ["ngay_khieu_nai_ph"],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_smy_phan_hoi_khieu_nai_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng tổng hợp thông tin về phản hồi, khiếu nại",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "sum", "tong_ldld"]
+        }        
+    }

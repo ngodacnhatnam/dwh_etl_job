@@ -1,0 +1,21 @@
+{
+"TABLE_SOURCE" : "STG_PHI_VA_PHUC_LOI",
+"SCHEMA_SOURCE" : "LIEN_DOAN_LD",
+"DB_TYPE_SOURCE" : "postgres",
+"CONNECTION_SOURCE" : "dwh_etl",
+"TABLE_TARGET" : "STG_LDLD_PHI_VA_PHUC_LOI",
+"SCHEMA_TARGET" : "DWH_STG",
+"DB_TYPE_TARGET" : "oracle",
+"CONNECTION_TARGET" : "dwh_oracle",
+"ALL_COL" : ["MA_CHI_PHI_CD", "TEN_CHI_PHI_CD", "HAN_MUC_CHI", "DON_VI_TINH"],
+"DATE_COL" : [],
+"DAG_CONFIG" : 
+    {
+        "AIRFLOW_NAME":"etl_stg_phi_va_phuc_loi_ldld",
+        "DEFAULT_ARGS":{"retries": 1},
+        "DESCRIPTION":"Lưu thông tin về danh mục phí và phúc lợi",
+        "SCHEDULE_INTERVAL":"None",
+        "CATCHUP":"False",
+        "TAGS":["etl", "stg", "tong_ldld", "test"]
+    }
+}

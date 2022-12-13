@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "DANH_MUC_PHAN_HOI",
+    "TABLE_SOURCE_2": "LOAI_PHAN_HOI",
+    "TABLE_SOURCE_3" : "",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_DANH_MUC_PHAN_HOI",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_PHAN_HOI", "MA_LOAI_PHAN_HOI", "TEN_PHAN_HOI"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_danh_muc_phan_hoi",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng danh mục phản hồi",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }

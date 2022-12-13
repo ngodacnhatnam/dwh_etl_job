@@ -1,0 +1,21 @@
+{   
+    "TABLE_SOURCE" : "STG_DANH_SACH_CONG_DOAN",
+    "SCHEMA_SOURCE" : "LIEN_DOAN_LD",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_LDLD_DANH_SACH_CONG_DOAN",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_CONG_DOAN_CS", "TEN_CONG_DOAN_CS", "TEN_LD_CAP_TREN", "DIA_CHI","SO_DT"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_stg_danh_sach_cong_doan_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Lưu thông tin về danh sách công đoàn",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "tong_ldld"]
+        }
+    }

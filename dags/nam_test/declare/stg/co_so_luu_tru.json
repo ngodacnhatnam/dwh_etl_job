@@ -1,0 +1,21 @@
+{
+    "TABLE_SOURCE" : "THONG_TIN_CO_SO_LT",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_CO_SO_LUU_TRU_TEST_NAMNGO",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_CSLT", "TRANG_THAI_CSLT", "TEN_CSLT", "XEP_LOAI_CSLT", "LOAI_HINH_CSLT", "SO_DIEN_THOAI", "DIA_CHI", "SO_PHONG", "TEN_HUYEN_TP"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_co_so_luu_tru_test",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Lưu thông tin về cơ sở lưu trú",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "tong_ldld"]
+        }
+    }

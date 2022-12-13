@@ -1,0 +1,22 @@
+{   
+    "TABLE_SOURCE" : "STG_THONG_TIN_DOAN_VIEN",
+    "SCHEMA_SOURCE" : "LIEN_DOAN_LD",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_LDLD_THONG_TIN_DOAN_VIEN",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_DOAN_VIEN", "TEN_DOAN_VIEN", "GIOI_TINH","NGAY_SINH", "QUE_QUAN", "SO_CMND","CHUC_VU",
+    "NGAY_VAO_CD","MA_CONG_DOAN_CS","VI_TRI_CONG_VIEC","MA_THE_DOAN_VIEN","NAM_VAO_LAM_VIEC"],
+    "DATE_COL" : ["NGAY_SINH","NGAY_VAO_CD"],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_stg_thong_tin_doan_vien_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Lưu thông tin về đoàn viên",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "tong_ldld"]
+        }
+    }

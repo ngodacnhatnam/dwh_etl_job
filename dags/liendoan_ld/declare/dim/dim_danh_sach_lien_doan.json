@@ -1,0 +1,35 @@
+{   
+    "TABLE_SOURCE" : "STG_LDLD_DANH_SACH_LIEN_DOAN",
+    "SCHEMA_SOURCE" : "DWH_STG",
+    "DB_TYPE_SOURCE" : "oracle",
+    "CONNECTION_SOURCE" : "dwh_oracle",
+
+    "TABLE_TARGET" : "DIM_LDLD_DANH_SACH_LIEN_DOAN",
+    "SCHEMA_TARGET" : "DWH_DIM",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+
+    "ALL_COL" : ["ID_LIEN_DOAN_CS","MA_LIEN_DOAN", "TEN_LIEN_DOAN", "DIA_CHI", 
+                "TRANG_THAI_BG","NGAY_HL_BG","NGAY_HH_BG"],
+    "TABLE_KEY" :["MA_LIEN_DOAN"],
+
+    "ALL_COL_SRC":["MA_LIEN_DOAN", "TEN_LIEN_DOAN", "DIA_CHI","SO_DT","TEN_LD_CAP_TREN"],
+
+    "MAP_SRC_TARGET":{
+        "MA_LIEN_DOAN":"MA_LIEN_DOAN",
+        "TEN_LIEN_DOAN":"TEN_LIEN_DOAN",
+        "DIA_CHI":"DIA_CHI"
+    },
+
+    "DATE_COL" : [],
+    "DAG_CONFIG" : 
+        {
+            "AIRFLOW_NAME":"etl_dim_danh_sach_lien_doan_ldld",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"etl dim về danh sách liên đoàn",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "dim", "tong_ldld"]
+        }
+    }
+

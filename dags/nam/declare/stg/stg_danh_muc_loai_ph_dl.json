@@ -1,0 +1,24 @@
+{
+    "TABLE_SOURCE" : "LOAI_PHAN_HOI",
+    "TABLE_SOURCE_2": "",
+    "TABLE_SOURCE_3" : "",
+    "TABLE_SOURCE_4" : "",
+    "SCHEMA_SOURCE" : "DU_LICH",
+    "DB_TYPE_SOURCE" : "postgres",
+    "CONNECTION_SOURCE" : "dwh_etl",
+    "TABLE_TARGET" : "STG_DU_LICH_DANH_MUC_LOAI_PH",
+    "SCHEMA_TARGET" : "DWH_STG",
+    "DB_TYPE_TARGET" : "oracle",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["MA_LOAI_PH", "TEN_LOAI_PH"],
+    "DATE_COL" : [],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"etl_stg_danh_muc_loai_ph",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng danh mục loại phải hồi",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "stg", "du_lich"]
+        }
+    }
