@@ -1,14 +1,14 @@
-name: AirflowProductionDeployment
+name: AirflowDevelopmentDeployment
 
 on: 
   push:
-    branches: [main]
+    branches: [develop]
   workflow_dispatch:
 
 jobs:
   build:
 
-    runs-on: [self-hosted, airflow-production-server]
+    runs-on: [self-hosted, airflow-dev]
     strategy:
       matrix:
         python-version: ["3.9"]
