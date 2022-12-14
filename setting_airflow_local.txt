@@ -1,0 +1,32 @@
+Bước 1: Cài đặt wsl trên Windows bằng cách qua window store cài Ubuntu 20.04 
+
+Bước 2: Vào máy Ubuntu vừa cài trên windows chạy lệnh 
+
+Bước 3: Update phần mềm cho Ubuntu và cài pip và venv 
+	sudo apt update && sudo apt upgrade -y
+	sudo apt install python3-pip python3-venv
+
+Bước 4: Khởi tạo thư mục home cho airflow 
+	 mkdir -p ~/airflow/airflowhome
+
+Bước 5: python3 -m venv ~/airflow/airflowenv
+
+Bước 6: Kích hoạt môi trường và cài wheel 
+	source ~/airflow/airflowenv/bin/activate
+	pip3 install wheel
+
+Bước 7: Cài đặt phiên bản airflow phù hợp
+	export AIRFLOW_HOME=~/airflow/airflowhome
+	AIRFLOW_VERSION=2.3.2
+	PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
+	CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+	pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+
+Bước 8: airflow standalone
+
+*Optional: airflow users create \
+    --username admin \
+    --firstname Raymond \
+    --lastname Tang \
+    --role Admin \
+    --email ***@kontext.tech
