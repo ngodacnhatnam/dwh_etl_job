@@ -107,14 +107,16 @@ with DAG(
                     print("success insert")
             except:
                 raise Exception("Fail insert")
-        insert_task = PythonOperator(
-        task_id='insert_task',
-        python_callable=insert,
-        )
-        insert_task.doc_md = dedent(
-            """ Insert task
-                Import data to dwh database
-            """
-        )
 
-        insert_task
+                
+    insert_task = PythonOperator(
+    task_id='insert_task',
+    python_callable=insert,
+    )
+    insert_task.doc_md = dedent(
+        """ Insert task
+            Import data to dwh database
+        """
+    )
+
+    insert_task
