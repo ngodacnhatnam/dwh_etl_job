@@ -42,7 +42,7 @@ with DAG(
     jdbcUrl = f"jdbc:oracle:thin:@{server}:{port}:{service_name}"
     jdbcDriver = "oracle.jdbc.driver.OracleDriver"
 
-    conn = OracleHook.get_connection('oracle_dwh')
+    conn = OracleHook.get_connection('dwh_oracle')
     engine = create_engine(
         f'oracle+cx_oracle://{conn.login}:{conn.password}@{conn.host}:{conn.port}/{conn.schema}')
     def insert(**kwargs):
