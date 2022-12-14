@@ -11,7 +11,7 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 os.environ["PYSPARK_SUBMIT_ARGS"] = "--driver-class-path ojdbc7-12.1.0.2.jar --jars ojdbc7-12.1.0.2.jar --master local[3] pyspark-shell"
 with DAG(
-    'spark_stg_thong_tin_doan_vien',
+    'spark_dim_chuc_vu_lien_doan',
     # These args will get passed on to each operator
     # You can override them on a per-task basis during operator initialization
     default_args={'retries': 0},
