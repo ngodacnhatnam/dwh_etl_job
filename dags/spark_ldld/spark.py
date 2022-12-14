@@ -66,6 +66,7 @@ with DAG(
             .option("driver", jdbcDriver) \
             .load()
 
+
         df_readfull_dim = spark.read.format("jdbc") \
             .option("url", jdbcUrl) \
             .option("query", sql_select_delete_dim) \
@@ -73,6 +74,7 @@ with DAG(
             .option("password", password) \
             .option("driver", jdbcDriver) \
             .load()
+
 
         # df_stg.show()
 
