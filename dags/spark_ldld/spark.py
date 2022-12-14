@@ -34,7 +34,7 @@ df_stg = spark.read.format("jdbc") \
     .option("password", password) \
     .option("driver", jdbcDriver) \
     .load()
-    
+
 df_dim = spark.read.format("jdbc") \
     .option("url", jdbcUrl) \
     .option("query", sql_select_dim) \
