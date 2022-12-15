@@ -1,0 +1,23 @@
+{
+    "TABLE_SOURCE" : "“STG_DU_LICH_THONG_TIN_HD_CSLT”",
+    "SCHEMA_SOURCE" : "DWH_STG",
+    "DB_TYPE_SOURCE" : "oracle",
+    "CONNECTION_SOURCE" : "dwh_oracle",
+    "TABLE_TARGET" : "“SMY_DU_LICH_THONG_TIN_HD_CSLT”",
+    "SCHEMA_TARGET" : "DWH_SUM",
+    "DB_TYPE_TARGET" : "oracle",
+    "ETL_DATE_COL" : "NGAY_ETL",
+    "ETL_DATE_VAR" : "",
+    "CONNECTION_TARGET" : "dwh_oracle",
+    "ALL_COL" : ["TEN_CSLT", "DOANH_THU", "SL_KHACH_NOI_DIA","SL_KHACH_QUOC_TE", "CONG_SUAT_PHONG", "THANG", "QUY", "NAM"],
+    "DATE_COL" : ["ngay_khieu_nai_ph"],
+    "DAG_CONFIG" :
+        {
+            "AIRFLOW_NAME":"“etl_smy_thong_tin_hd_cslt”",
+            "DEFAULT_ARGS":{"retries": 1},
+            "DESCRIPTION":"Bảng tổng hợp thông tin về tin hồi, khiếu nại",
+            "SCHEDULE_INTERVAL":"None",
+            "CATCHUP":"False",
+            "TAGS":["etl", "sum", "du_lich"]
+        }
+}
